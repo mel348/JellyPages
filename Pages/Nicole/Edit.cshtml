@@ -1,0 +1,83 @@
+﻿@page
+@model JellyPages.Pages.Nicole.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+
+    body {
+        background-image: url("/Images/jellyfishing.webp");
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: black;
+    }
+
+    h1 {
+        background-color: lightgoldenrodyellow;
+        color: purple;
+        border-style: groove;
+        border-radius: 5px;
+        width: fit-content;
+        padding: 5px;
+    }
+
+    h4 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    div, form {
+        border-radius: 5px;
+        color: darkslategrey;
+    }
+</style>
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6" style="background-color:lightseagreen">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Phonebook.ID" />
+            <div class="form-group">
+                <label asp-for="Phonebook.FirstName" class="control-label"></label>
+                <input asp-for="Phonebook.FirstName" class="form-control" />
+                <span asp-validation-for="Phonebook.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonebook.LastName" class="control-label"></label>
+                <input asp-for="Phonebook.LastName" class="form-control" />
+                <span asp-validation-for="Phonebook.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonebook.Address" class="control-label"></label>
+                <input asp-for="Phonebook.Address" class="form-control" />
+                <span asp-validation-for="Phonebook.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonebook.Phone" class="control-label"></label>
+                <input asp-for="Phonebook.Phone" class="form-control" />
+                <span asp-validation-for="Phonebook.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonebook.Email" class="control-label"></label>
+                <input asp-for="Phonebook.Email" class="form-control" />
+                <span asp-validation-for="Phonebook.Email" class="text-danger"></span>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-primary" /> |     <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

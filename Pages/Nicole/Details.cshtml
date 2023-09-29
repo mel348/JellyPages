@@ -1,0 +1,75 @@
+﻿@page
+@model JellyPages.Pages.Nicole.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+
+    body {
+        background-image: url("/Images/jellyfishing.webp");
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: black;
+    }
+
+    h1 {
+        background-color: lightgoldenrodyellow;
+        color: purple;
+        border-style: groove;
+        border-radius: 5px;
+        width: fit-content;
+        padding: 5px;
+    }
+
+    h4 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    div, form {
+        border-radius: 5px;
+    }
+
+</style>
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row" style="background-color:lightseagreen">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Phonebook.ID" class="btn btn-primary">Edit</a> |
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>

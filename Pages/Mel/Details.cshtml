@@ -1,0 +1,53 @@
+﻿@page
+@model JellyPages.Pages.Mel.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4>Resident Information</h4>
+
+<body body style="background-color:white">
+
+
+    <hr />
+    <div class="row border border-dark border border-radius 8px p-4" style=" background-color:#719870">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phonebook.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phonebook.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phonebook.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phonebook.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phonebook.Address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phonebook.Address)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phonebook.Phone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phonebook.Phone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phonebook.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phonebook.Email)
+            </dd>
+        </dl>
+
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Phonebook.ID" class="btn btn-success btn-sm border border-dark" style="border-radius: 8px" />Edit</a> |
+            <a asp-page="./Index" class="btn btn-info btn-sm border border-dark" style="border-radius: 8px">Back to List</a>
+        </div>
+    </div>
+</body>

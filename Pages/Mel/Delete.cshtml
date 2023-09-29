@@ -1,0 +1,52 @@
+﻿@page
+@model JellyPages.Pages.Mel.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Delete Resident</h3>
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <hr />
+    <dl class="row border border-dark border border-radius 8px p-4" style=" background-color:#ff808b">
+
+        <dt class="col-md-2">
+            @Html.DisplayNameFor(model => model.Phonebook.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonebook.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phonebook.Email)
+        </dd>
+
+
+        <form method="post">
+            <input type="hidden" asp-for="Phonebook.ID" />
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm border border-dark" style="border-radius:8px" /> |
+            <a asp-page="./Index" class="btn btn-info btn-sm border border-dark" style="border-radius: 8px">Back to List</a>
+        </form>
+    </dl>
+</div>
