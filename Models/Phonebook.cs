@@ -16,6 +16,7 @@ namespace JellyPages.Models {
         [Required]
         [StringLength(10, ErrorMessage = "You must enter a 7-digit phone number")]
         public string Phone { get; set; }
+        [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Please enter a valid email address.")]
         [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Incorrect Email Format")]
         public string Email { get; set; }
