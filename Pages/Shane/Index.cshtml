@@ -8,7 +8,10 @@
 <head>
     <style>
         body {
-            background-color: yellow;
+            background-image: url('images/shanebackground.png');
+            background-repeat: no-repeat;
+            background-size:cover;
+
         }
 
         h1 {
@@ -23,11 +26,11 @@
 <h1>Jelly Pages</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
 <form>
     <p>
-        First Name: <input type="text" asp-for="SearchString" />
+        <input type="text" asp-for="SearchString" placeholder="Click to search" class="text-center rounded"/>
         <input type="submit" value="Filter" />
     </p>
 </form>
@@ -71,9 +74,9 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-page="./Edit" class="btn btn-primary btn-sm" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" class="btn btn-primary btn-sm" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" class="btn btn-primary btn-sm"  asp-route-id="@item.ID">Delete</a>
                 </td>
             </tr>
         }
