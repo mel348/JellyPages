@@ -21,7 +21,7 @@ namespace JellyPages.Models {
                         LastName = "SquarePants",
                         Address = "124 Conch St.",
                         Phone = "776-4377",
-                        Email = "ssquarepants@bikinibottom.com"
+                        Email = "ssquarepants@bikinibottom.com",
                     },
 
                     new Phonebook {

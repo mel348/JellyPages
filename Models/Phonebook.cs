@@ -20,6 +20,5 @@ namespace JellyPages.Models {
         [Required(ErrorMessage = "Please enter a valid email address.")]
         [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Incorrect Email Format")]
         public string Email { get; set; }
-
     }
 }
