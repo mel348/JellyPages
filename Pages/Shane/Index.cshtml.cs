@@ -24,8 +24,22 @@ namespace JellyPages.Pages.Shane
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
-        public async Task OnGetAsync() {
-            Phonebook = await _context.Phonebook.ToListAsync();
+        public async Task OnGetAsync() 
+        {
+            var phonebook = from p in _context.Phonebook
+                            select p;
+
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                phonebook = phonebook.Where(p => p.FirstName.Contains(SearchString)
+                               || p.LastName.Contains(SearchString)
+                               || p.Address.Contains(SearchString)
+                               || p.Phone.Contains(SearchString)
+                               || p.Email.Contains(SearchString));
+            }
+
+            Phonebook = await phonebook.ToListAsync();
         }
     }
 }
